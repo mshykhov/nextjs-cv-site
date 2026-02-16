@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #ffffff;
+    --color-primary: #111827;
+    --color-muted: #6b7280;
+    --color-accent: #2563eb;
+    --color-border: #e5e7eb;
+    --color-surface: #f9fafb;
+  }
+
+  .dark {
+    --color-bg: #0f172a;
+    --color-primary: #e2e8f0;
+    --color-muted: #94a3b8;
+    --color-accent: #60a5fa;
+    --color-border: #1e293b;
+    --color-surface: #1e293b;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  ::selection {
+    background-color: rgb(from var(--color-accent) r g b / 0.15);
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-xs font-mono uppercase tracking-widest text-muted mb-6 border-b border-border pb-2;
+  }
+}
+
+@media print {
+  :root {
+    --color-bg: #ffffff;
+    --color-primary: #111827;
+    --color-muted: #6b7280;
+    --color-accent: #111827;
+    --color-border: #d1d5db;
+    --color-surface: #f9fafb;
+  }
+
+  body {
+    font-size: 11px;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+}
