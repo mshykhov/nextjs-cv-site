@@ -16,6 +16,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(config.meta.url),
   title: config.meta.title,
   description: config.meta.description,
   keywords: config.meta.keywords,

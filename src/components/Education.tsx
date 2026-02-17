@@ -1,4 +1,4 @@
-import { education } from "@/data/resume";
+import config from "@/data/resume";
 
 export default function Education() {
   return (
@@ -6,10 +6,10 @@ export default function Education() {
       <h2 className="section-title">Education</h2>
       <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
         <div>
-          <p className="text-sm font-medium">{education.degree}</p>
-          <p className="text-sm text-muted">{education.university}</p>
+          <p className="text-sm font-medium">{config.education.degree}</p>
+          <p className="text-sm text-muted">{config.education.university}</p>
         </div>
-        <span className="text-xs font-mono text-muted">{education.period}</span>
+        <span className="text-xs font-mono text-muted">{config.education.period}</span>
       </div>
     </section>
   );

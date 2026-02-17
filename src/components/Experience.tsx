@@ -1,11 +1,11 @@
-import { experience } from "@/data/resume";
+import config from "@/data/resume";
 
 export default function Experience() {
   return (
     <section className="mb-10">
       <h2 className="section-title">Experience</h2>
       <div className="space-y-8">
-        {experience.map((job, i) => (
+        {config.experience.map((job, i) => (
           <div key={i}>
             <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
               <h3 className="text-base font-semibold">{job.title}</h3>

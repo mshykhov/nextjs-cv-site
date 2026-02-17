@@ -1,4 +1,5 @@
-import { personalInfo } from "@/data/resume";
+import config from "@/data/resume";
+import type { ContactType } from "@/types/resume";
 import CopyEmail from "./CopyEmail";
 import ThemeToggle from "./ThemeToggle";
 
@@ -53,69 +54,68 @@ function DownloadIcon() {
   );
 }
 
+const contactIcons: Record<ContactType, () => React.JSX.Element> = {
+  email: MailIcon,
+  telegram: TelegramIcon,
+  whatsapp: WhatsAppIcon,
+  linkedin: LinkedInIcon,
+  github: GitHubIcon,
+};
+
+function getContactHref(type: ContactType, value: string): string {
+  switch (type) {
+    case "telegram":
+      return `https://t.me/${value.replace("@", "")}`;
+    case "whatsapp":
+      return `https://wa.me/${value.replace("+", "")}`;
+    default:
+      return value;
+  }
+}
+
 export default function Header() {
   return (
     <header className="mb-12">
       <div className="relative text-center mb-5">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-1">
-          {personalInfo.name}
+          {config.personal.name}
         </h1>
-        <p className="text-lg text-muted">{personalInfo.role}</p>
+        <p className="text-lg text-muted">{config.personal.role}</p>
         <div className="absolute top-0 right-0">
           <ThemeToggle />
         </div>
       </div>
       <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 mb-3">
-        <CopyEmail email={personalInfo.email} icon={<MailIcon />} />
-        <span className="hidden sm:inline text-muted/30">|</span>
-        <a
-          href={`https://t.me/${personalInfo.telegram.replace("@", "")}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent transition-colors"
-        >
-          <TelegramIcon />
-          Telegram
-        </a>
-        <span className="hidden sm:inline text-muted/30">|</span>
-        <a
-          href={`https://wa.me/${personalInfo.whatsapp.replace("+", "")}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent transition-colors"
-        >
-          <WhatsAppIcon />
-          WhatsApp
-        </a>
-        <span className="hidden sm:inline text-muted/30">|</span>
-        <a
-          href={personalInfo.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent transition-colors"
-        >
-          <LinkedInIcon />
-          LinkedIn
-        </a>
-        <span className="hidden sm:inline text-muted/30">|</span>
-        <a
-          href={personalInfo.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent transition-colors"
-        >
-          <GitHubIcon />
-          GitHub
-        </a>
+        {config.contacts.map((contact, i) => {
+          const Icon = contactIcons[contact.type];
+          return (
+            <span key={contact.type} className="contents">
+              {i > 0 && <span className="hidden sm:inline text-muted/30">|</span>}
+              {contact.type === "email" ? (
+                <CopyEmail email={contact.value} icon={<Icon />} />
+              ) : (
+                <a
+                  href={getContactHref(contact.type, contact.value)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent transition-colors"
+                >
+                  <Icon />
+                  {contact.label}
+                </a>
+              )}
+            </span>
+          );
+        })}
       </div>
       <div className="flex justify-center no-print">
         <a
-          href={personalInfo.resumeUrl}
-          download="SHYKHOV_MYRON_CV.pdf"
+          href={config.resume.url}
+          download={config.resume.filename}
           className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline"
         >
           <DownloadIcon />
-          Download CV
+          {config.resume.label}
         </a>
       </div>
     </header>
