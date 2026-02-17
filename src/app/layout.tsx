@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import config from "@/data/resume";
 import "./globals.css";
 
 const inter = Inter({
@@ -15,20 +16,31 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Myron Shykhov — Senior Backend Engineer",
-  description:
-    "Backend Software Engineer with 5+ years of experience specializing in Kotlin, Java, and Spring ecosystem.",
-  keywords: ["Myron Shykhov", "Backend Engineer", "Kotlin", "Java", "Spring Boot"],
-  authors: [{ name: "Myron Shykhov" }],
-  icons: { icon: "/favicon.svg" },
+  title: config.meta.title,
+  description: config.meta.description,
+  keywords: config.meta.keywords,
+  authors: [{ name: config.personal.name }],
   openGraph: {
-    title: "Myron Shykhov — Senior Backend Engineer",
-    description:
-      "Backend Software Engineer with 5+ years of experience specializing in Kotlin, Java, and Spring ecosystem.",
-    url: "https://mshykhov.com",
-    siteName: "Myron Shykhov",
-    locale: "en_US",
+    title: config.meta.title,
+    description: config.meta.description,
+    url: config.meta.url,
+    siteName: config.personal.name,
+    locale: config.meta.locale,
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: config.meta.title,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: config.meta.title,
+    description: config.meta.description,
+    images: ["/og-image.png"],
   },
   robots: { index: true, follow: true },
 };
