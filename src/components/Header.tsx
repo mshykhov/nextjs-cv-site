@@ -64,7 +64,7 @@ export default function Header() {
         </div>
         <ThemeToggle />
       </div>
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap gap-3 mb-2">
         <a
           href={`mailto:${personalInfo.email}`}
           className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent transition-colors"
@@ -90,6 +90,8 @@ export default function Header() {
           <WhatsAppIcon />
           {personalInfo.whatsapp}
         </a>
+      </div>
+      <div className="flex flex-wrap gap-3">
         <a
           href={personalInfo.linkedin}
           target="_blank"
