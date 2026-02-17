@@ -4,6 +4,15 @@ Personal CV/portfolio site built with Next.js, React, TypeScript, and Tailwind C
 
 **Live:** [mshykhov.com](https://mshykhov.com)
 
+## Preview
+
+<p align="center">
+  <img src="docs/preview-desktop.png" width="700" alt="Desktop preview" />
+</p>
+<p align="center">
+  <img src="docs/preview-mobile.png" width="250" alt="Mobile preview" />
+</p>
+
 ## Tech Stack
 
 - Next.js 15 (static export)
