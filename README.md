@@ -49,12 +49,12 @@ All site content is controlled by a single config object in `src/data/resume.ts`
 | `resume.url` | Path to PDF (default `"/resume.pdf"`) |
 | `resume.filename` | Download filename (e.g. `"DOE_JOHN_CV.pdf"`) |
 | `resume.label` | Download button text |
-| `summary` | Array of summary paragraphs |
-| `experience` | Array of jobs with company, title, period, domain, stack, highlights |
-| `skills` | Array of skill categories with name and items |
 | `ogImage.tagline` | Subtitle on OG image (e.g. `"Senior Backend Engineer · 5+ years"`) |
 | `ogImage.technologies` | Technology badges on OG image |
 | `ogImage.domains` | Industry/domain tags on OG image |
+| `summary` | Array of summary paragraphs |
+| `experience` | Array of jobs with company, title, period, domain, stack, highlights |
+| `skills` | Array of skill categories with name and items |
 | `education` | Degree, university, period |
 
 ### Contact Types
