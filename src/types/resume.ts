@@ -65,12 +65,23 @@ export interface Education {
   period: string;
 }
 
+/** OG image content — lines displayed on the auto-generated social preview */
+export interface OgImageConfig {
+  /** Tagline under the name (e.g. "Senior Backend Engineer · 5+ years") */
+  tagline: string;
+  /** Key technologies line (e.g. ["Kotlin", "Java", "Spring Boot"]) */
+  technologies: string[];
+  /** Domain/industry tags (e.g. ["FinTech", "AI", "Web3"]) */
+  domains: string[];
+}
+
 /** Root configuration — single source of truth for the entire site */
 export interface ResumeConfig {
   meta: SiteMeta;
   personal: PersonalInfo;
   contacts: ContactLink[];
   resume: ResumeDownload;
+  ogImage: OgImageConfig;
   summary: string[];
   experience: Job[];
   skills: TechCategory[];

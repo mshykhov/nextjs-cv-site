@@ -28,20 +28,6 @@ export const metadata: Metadata = {
     siteName: config.personal.name,
     locale: config.meta.locale,
     type: "website",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: config.meta.title,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: config.meta.title,
-    description: config.meta.description,
-    images: ["/og-image.png"],
   },
   robots: { index: true, follow: true },
 };

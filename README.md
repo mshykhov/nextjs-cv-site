@@ -52,6 +52,9 @@ All site content is controlled by a single config object in `src/data/resume.ts`
 | `summary` | Array of summary paragraphs |
 | `experience` | Array of jobs with company, title, period, domain, stack, highlights |
 | `skills` | Array of skill categories with name and items |
+| `ogImage.tagline` | Subtitle on OG image (e.g. `"Senior Backend Engineer · 5+ years"`) |
+| `ogImage.technologies` | Technology badges on OG image |
+| `ogImage.domains` | Industry/domain tags on OG image |
 | `education` | Degree, university, period |
 
 ### Contact Types
@@ -65,7 +68,7 @@ Each type auto-maps to the correct icon and URL format.
 - **Colors** — edit CSS variables in `src/app/globals.css` (light and dark themes)
 - **Fonts** — change Google Fonts imports in `src/app/layout.tsx`
 - **Favicon** — auto-generated from `personal.initials` in config
-- **OG Image** — replace `public/og-image.png` (1200x630px) for social media link previews (LinkedIn, Telegram, Twitter)
+- **OG Image** — auto-generated from `ogImage` config (tagline, technologies, domains)
 
 ## Local Development
 

@@ -30,6 +30,12 @@ const config: ResumeConfig = {
     label: "Download CV",
   },
 
+  ogImage: {
+    tagline: "Senior Backend Engineer · 5+ years",
+    technologies: ["Kotlin", "Java", "Spring Boot", "Microservices"],
+    domains: ["Cloud Platforms", "FinTech", "SaaS", "Platform Engineering"],
+  },
+
   summary: [
     "Backend Software Engineer with 5+ years of experience, specializing in Kotlin and Java with the Spring ecosystem. I've worked in teams ranging from 3 to 12 people, across product and outstaff setups.",
     "Skilled in building backend services, BFF layers, API integrations, and automating business processes. Experienced across cloud marketplaces, restaurant booking platforms, invoicing & payments, and data extraction.",
