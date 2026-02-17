@@ -1,4 +1,5 @@
 import { personalInfo } from "@/data/resume";
+import CopyEmail from "./CopyEmail";
 import ThemeToggle from "./ThemeToggle";
 
 function MailIcon() {
@@ -64,14 +65,9 @@ export default function Header() {
         </div>
         <ThemeToggle />
       </div>
-      <div className="flex flex-wrap gap-3 mb-2">
-        <a
-          href={`mailto:${personalInfo.email}`}
-          className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent transition-colors"
-        >
-          <MailIcon />
-          {personalInfo.email}
-        </a>
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-3">
+        <CopyEmail email={personalInfo.email} icon={<MailIcon />} />
+        <span className="hidden sm:inline text-muted/40">|</span>
         <a
           href={`https://t.me/${personalInfo.telegram.replace("@", "")}`}
           target="_blank"
@@ -79,8 +75,9 @@ export default function Header() {
           className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent transition-colors"
         >
           <TelegramIcon />
-          {personalInfo.telegram}
+          Telegram
         </a>
+        <span className="hidden sm:inline text-muted/40">|</span>
         <a
           href={`https://wa.me/${personalInfo.whatsapp.replace("+", "")}`}
           target="_blank"
@@ -88,10 +85,9 @@ export default function Header() {
           className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent transition-colors"
         >
           <WhatsAppIcon />
-          {personalInfo.whatsapp}
+          WhatsApp
         </a>
-      </div>
-      <div className="flex flex-wrap gap-3">
+        <span className="hidden sm:inline text-muted/40">|</span>
         <a
           href={personalInfo.linkedin}
           target="_blank"
@@ -101,6 +97,7 @@ export default function Header() {
           <LinkedInIcon />
           LinkedIn
         </a>
+        <span className="hidden sm:inline text-muted/40">|</span>
         <a
           href={personalInfo.github}
           target="_blank"
@@ -110,10 +107,12 @@ export default function Header() {
           <GitHubIcon />
           GitHub
         </a>
+      </div>
+      <div className="flex justify-center no-print">
         <a
           href={personalInfo.resumeUrl}
           download="SHYKHOV_MYRON_CV.pdf"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline no-print"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline"
         >
           <DownloadIcon />
           Download CV
