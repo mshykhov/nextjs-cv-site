@@ -6,12 +6,19 @@ Personal CV/portfolio site built with Next.js, React, TypeScript, and Tailwind C
 
 ## Preview
 
+<details>
+<summary>Desktop</summary>
 <p align="center">
   <img src="docs/preview-desktop.png" width="700" alt="Desktop preview" />
 </p>
+</details>
+
+<details>
+<summary>Mobile</summary>
 <p align="center">
   <img src="docs/preview-mobile.png" width="250" alt="Mobile preview" />
 </p>
+</details>
 
 ## Tech Stack
 
