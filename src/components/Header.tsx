@@ -56,18 +56,18 @@ function DownloadIcon() {
 export default function Header() {
   return (
     <header className="mb-12">
-      <div className="flex items-start justify-between">
-        <div>
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-1">
-            {personalInfo.name}
-          </h1>
-          <p className="text-lg text-muted mb-5">{personalInfo.role}</p>
+      <div className="relative text-center mb-5">
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-1">
+          {personalInfo.name}
+        </h1>
+        <p className="text-lg text-muted">{personalInfo.role}</p>
+        <div className="absolute top-0 right-0">
+          <ThemeToggle />
         </div>
-        <ThemeToggle />
       </div>
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-3">
+      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 mb-3">
         <CopyEmail email={personalInfo.email} icon={<MailIcon />} />
-        <span className="hidden sm:inline text-muted/40">|</span>
+        <span className="hidden sm:inline text-muted/30">|</span>
         <a
           href={`https://t.me/${personalInfo.telegram.replace("@", "")}`}
           target="_blank"
@@ -77,7 +77,7 @@ export default function Header() {
           <TelegramIcon />
           Telegram
         </a>
-        <span className="hidden sm:inline text-muted/40">|</span>
+        <span className="hidden sm:inline text-muted/30">|</span>
         <a
           href={`https://wa.me/${personalInfo.whatsapp.replace("+", "")}`}
           target="_blank"
@@ -87,7 +87,7 @@ export default function Header() {
           <WhatsAppIcon />
           WhatsApp
         </a>
-        <span className="hidden sm:inline text-muted/40">|</span>
+        <span className="hidden sm:inline text-muted/30">|</span>
         <a
           href={personalInfo.linkedin}
           target="_blank"
@@ -97,7 +97,7 @@ export default function Header() {
           <LinkedInIcon />
           LinkedIn
         </a>
-        <span className="hidden sm:inline text-muted/40">|</span>
+        <span className="hidden sm:inline text-muted/30">|</span>
         <a
           href={personalInfo.github}
           target="_blank"

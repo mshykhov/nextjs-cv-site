@@ -20,6 +20,7 @@ export default function CopyEmail({
   return (
     <button
       onClick={handleClick}
+      title="Click to copy"
       className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-accent transition-colors cursor-pointer"
     >
       {icon}
